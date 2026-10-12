@@ -29,7 +29,7 @@ export function BrandSync() {
   const logo = profilSekolah?.logo;
 
   useEffect(() => {
-    document.title = nama ? `${nama} — SPP & Sarpras` : `${NAMA_DEFAULT} — SPP & Sarpras`;
+    document.title = nama ? `${nama} — Aplikasi SPP` : `${NAMA_DEFAULT} — Aplikasi SPP`;
   }, [nama]);
 
   useEffect(() => {

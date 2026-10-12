@@ -26,10 +26,9 @@ const LANGKAH_AWAL = [
 const STEPS = [
   { judul: '👋 Selamat datang!', isi: 'Ikuti tur singkat ini untuk mengenal bagian-bagian aplikasi. Bisa dilewati kapan saja, dan bisa diulang dari tombol "Tur" di bagian atas.' },
   { target: 'brand', judul: 'Identitas Sekolah', isi: 'Nama dan logo sekolah tampil di sini. Isinya otomatis mengikuti menu Profil Sekolah — begitu juga di halaman login, kwitansi, dan tab browser.' },
-  { target: 'nav-dashboard', judul: 'Dashboard', isi: 'Ringkasan cepat: jumlah siswa, pemasukan, tunggakan, dan kondisi aset.' },
+  { target: 'nav-dashboard', judul: 'Dashboard', isi: 'Ringkasan cepat: jumlah siswa, pemasukan, pengeluaran, dan tunggakan.' },
   { target: 'nav-spp', judul: '🎓 SPP', isi: 'Dashboard SPP per kelas dan menu Pembayaran — tempat mencatat pembayaran siswa dan mencetak kwitansi.' },
   { target: 'nav-keuangan', judul: '💰 Keuangan', isi: 'Atur tarif, terbitkan tagihan SPP & biaya lain, catat pemasukan/pengeluaran lain, rekap tunggakan, beasiswa, dan laporan keuangan (buku besar, laba rugi, neraca, cashflow).' },
-  { target: 'nav-sarpras', judul: '🏫 Sarpras', isi: 'Data aset & inventaris sekolah, peminjaman, pemeliharaan, dan laporan rekap aset.' },
   { target: 'nav-pengaturan', judul: '⚙️ Pengaturan', isi: 'Profil sekolah & tahun ajaran, data kelas, guru, siswa, manajemen user & hak akses, serta log histori.' },
   { target: 'status', judul: 'Status Koneksi D & K', isi: 'D = database Data Induk, K = database Keuangan. Hijau berarti terhubung, merah berarti terputus. Dicek otomatis tiap beberapa detik.' },
   { target: 'tahun', judul: 'Tahun Ajaran Aktif', isi: 'Tagihan dan laporan mengikuti tahun ajaran yang aktif. Atur di Pengaturan › Profil Sekolah & Tahun Ajaran.' },

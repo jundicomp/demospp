@@ -23,10 +23,6 @@ import PemasukanPengeluaran from './pages/keuangan/PemasukanPengeluaran';
 import BeasiswaPage from './pages/keuangan/BeasiswaPage';
 import RekapTunggakan from './pages/keuangan/RekapTunggakan';
 import LaporanKeuangan from './pages/keuangan/LaporanKeuangan';
-import DataAset from './pages/sarpras/DataAset';
-import PeminjamanAset from './pages/sarpras/PeminjamanAset';
-import PemeliharaanAset from './pages/sarpras/PemeliharaanAset';
-import LaporanRekapAset from './pages/sarpras/LaporanRekapAset';
 import ComingSoon from './pages/ComingSoon';
 import { BrandSync } from './components/brand/SchoolBrand';
 
@@ -60,10 +56,6 @@ function Gate() {
         <Route path="/beasiswa" element={<BeasiswaPage />} />
         <Route path="/tunggakan" element={<RekapTunggakan />} />
         <Route path="/laporan-keuangan" element={<LaporanKeuangan />} />
-        <Route path="/aset" element={<DataAset />} />
-        <Route path="/peminjaman-aset" element={<PeminjamanAset />} />
-        <Route path="/pemeliharaan-aset" element={<PemeliharaanAset />} />
-        <Route path="/aset-laporan" element={<LaporanRekapAset />} />
         {PLACEHOLDER_PAGES.map(p => (
           <Route key={p.path} path={p.path} element={<ComingSoon pageId={p.pageId} title={p.title} path={p.menu} />} />
         ))}

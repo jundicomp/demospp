@@ -25,7 +25,7 @@ export default function LoginScreen() {
           <div style={{ display: 'flex', justifyContent: 'center' }}><LogoBawaan nama={profilSekolah?.nama} size={64} /></div>
         )}
         <h2>{namaSekolahAtauDefault(profilSekolah)}</h2>
-        <p className="login-sub">SPP dan Sarpras</p>
+        <p className="login-sub">Aplikasi SPP</p>
         <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 18 }}>
           <ConnectionStatusBadge onDone={() => setCheckingConnection(false)} />
         </div>

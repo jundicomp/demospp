@@ -8,16 +8,15 @@ import { formatRupiah, todayWIB } from '../db/helpers';
 import InfoCard from '../components/common/InfoCard';
 import {
   IconGraduationCap, IconBuilding, IconUsers, IconTrendUp, IconTrendDown,
-  IconAlertCircle, IconLayers, IconBox, IconCheckCircle, IconAlertTriangle, IconXCircle,
+  IconAlertCircle,
 } from '../components/common/icons';
 
 const WARNA_LP = ['#2563eb', '#7e3af2']; // Laki-laki, Perempuan
-const WARNA_KONDISI = ['#16794a', '#c9962c', '#c0392b']; // Baik, Rusak Ringan, Rusak Berat
 
 export default function Dashboard() {
   const {
     siswa, siswaLoading, siswaError, siswaLoaded, refreshSiswa, kelas, guru, tahunAjaranAktif,
-    aset, asetLoaded, allTagihan, tagihanTerbayar, pembayaran, pembayaranLoaded, pengeluaran, pengeluaranLoaded, pemasukanLain,
+    allTagihan, tagihanTerbayar, pembayaran, pembayaranLoaded, pengeluaran, pengeluaranLoaded, pemasukanLain,
   } = useAppData();
 
   const siswaAktif = useMemo(() => siswa.filter(s => (s.status || 'Aktif') === 'Aktif'), [siswa]);
@@ -68,22 +67,6 @@ export default function Dashboard() {
       return s + (sisa > 0 ? sisa : 0);
     }, 0);
   }, [allTagihan, tagihanTerbayar]);
-
-  // ==== Ringkasan Sarpras (sesuai Laporan Rekap Aset) ====
-  const sarprasStats = useMemo(() => {
-    return {
-      totalJenis: aset.length,
-      totalUnit: aset.reduce((s, a) => s + a.total, 0),
-      baik: aset.reduce((s, a) => s + a.baik, 0),
-      rr: aset.reduce((s, a) => s + a.rusakRingan, 0),
-      rb: aset.reduce((s, a) => s + a.rusakBerat, 0),
-    };
-  }, [aset]);
-  const dataChartKondisi = [
-    { name: 'Baik', value: sarprasStats.baik },
-    { name: 'Rusak Ringan', value: sarprasStats.rr },
-    { name: 'Rusak Berat', value: sarprasStats.rb },
-  ].filter(d => d.value > 0);
 
   return (
     <Page pageId="dashboard" title="Dashboard" path="Dashboard">
@@ -193,35 +176,6 @@ export default function Dashboard() {
         </div>
       </div>
 
-      <div className="card">
-        <div className="card-head"><div><h3>🏫 Ringkasan Sarpras</h3><p>Kondisi aset & inventaris sekolah.</p></div></div>
-        <div className="card-body">
-          {!asetLoaded && <p style={{ color: 'var(--muted)', fontSize: 13 }}>Memuat data aset...</p>}
-          {asetLoaded && sarprasStats.totalJenis === 0 && <p style={{ color: 'var(--muted)', fontSize: 13 }}>Belum ada data aset tersimpan.</p>}
-          {asetLoaded && sarprasStats.totalJenis > 0 && (
-            <div style={{ display: 'flex', gap: 24, flexWrap: 'wrap', alignItems: 'center' }}>
-              <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
-                <InfoCard icon={IconLayers} color="c-purple" value={sarprasStats.totalJenis} label="Jenis Aset" style={{ minWidth: 130 }} />
-                <InfoCard icon={IconBox} color="c-blue" value={sarprasStats.totalUnit} label="Total Unit" style={{ minWidth: 130 }} />
-                <InfoCard icon={IconCheckCircle} color="c-green" value={sarprasStats.baik} label="Baik" style={{ minWidth: 130 }} />
-                <InfoCard icon={IconAlertTriangle} color="c-gold" value={sarprasStats.rr} label="Rusak Ringan" style={{ minWidth: 130 }} />
-                <InfoCard icon={IconXCircle} color="c-red" value={sarprasStats.rb} label="Rusak Berat" style={{ minWidth: 130 }} />
-              </div>
-              <div style={{ flex: '1 1 220px', minWidth: 220, maxWidth: 320 }}>
-                <ResponsiveContainer width="100%" height={200}>
-                  <PieChart>
-                    <Pie data={dataChartKondisi} dataKey="value" nameKey="name" innerRadius={40} outerRadius={70} paddingAngle={2}>
-                      {dataChartKondisi.map((_, i) => <Cell key={i} fill={WARNA_KONDISI[i % WARNA_KONDISI.length]} />)}
-                    </Pie>
-                    <Tooltip />
-                    <Legend />
-                  </PieChart>
-                </ResponsiveContainer>
-              </div>
-            </div>
-          )}
-        </div>
-      </div>
     </Page>
   );
 }

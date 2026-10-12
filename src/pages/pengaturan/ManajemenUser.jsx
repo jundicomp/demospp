@@ -33,7 +33,7 @@ function TambahRoleModal({ onClose }) {
       <form onSubmit={simpan}>
         <div className="field">
           <label>Nama Role</label>
-          <input type="text" value={nama} onChange={e => setNama(e.target.value)} placeholder="mis. Guru, Wali Kelas, Operator Sarpras" autoFocus />
+          <input type="text" value={nama} onChange={e => setNama(e.target.value)} placeholder="mis. Guru, Wali Kelas, Kasir" autoFocus />
         </div>
         <div style={{ display: 'flex', justifyContent: 'flex-end', gap: 10, marginTop: 16 }}>
           <button type="button" className="btn" onClick={onClose}>Batal</button>

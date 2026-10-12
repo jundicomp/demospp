@@ -61,7 +61,7 @@ export default function Sidebar() {
         )}
         <div>
           <div className="brand-name">{namaSekolahAtauDefault(profilSekolah)}</div>
-          <div className="brand-sub">SPP dan Sarpras</div>
+          <div className="brand-sub">Aplikasi SPP</div>
         </div>
       </div>
 
@@ -80,13 +80,6 @@ export default function Sidebar() {
           <Item to="/tunggakan" canAccess={canAccess('tunggakan')}>Rekap Tunggakan</Item>
           <Item to="/beasiswa" canAccess={canAccess('beasiswa')}>Beasiswa</Item>
           <Item to="/laporan-keuangan" canAccess={canAccess('laporan-keuangan')}>Laporan Keuangan</Item>
-        </NavGroup>
-
-        <NavGroup id="sarpras" label="🏫 SARPRAS" open={openGroups.sarpras} onToggle={toggle}>
-          <Item to="/aset" canAccess={canAccess('aset')}>Data Aset &amp; Inventaris</Item>
-          <Item to="/peminjaman-aset" canAccess={canAccess('peminjaman-aset')}>Peminjaman Aset</Item>
-          <Item to="/pemeliharaan-aset" canAccess={canAccess('pemeliharaan-aset')}>Pemeliharaan Aset</Item>
-          <Item to="/aset-laporan" canAccess={canAccess('laporan-rekap-aset')}>Laporan Rekap Aset</Item>
         </NavGroup>
 
         <NavGroup id="pengaturan" label="⚙️ PENGATURAN" open={openGroups.pengaturan} onToggle={toggle}>

@@ -25,15 +25,6 @@ export const NAV_STRUCTURE = [
     ],
   },
   {
-    id: 'sarpras', type: 'group', label: 'Sarpras', groupLabel: '🏫 SARPRAS', icon: '🏫',
-    items: [
-      { to: '/aset', pageId: 'aset', label: 'Data Aset & Inventaris' },
-      { to: '/peminjaman-aset', pageId: 'peminjaman-aset', label: 'Peminjaman Aset' },
-      { to: '/pemeliharaan-aset', pageId: 'pemeliharaan-aset', label: 'Pemeliharaan Aset' },
-      { to: '/aset-laporan', pageId: 'laporan-rekap-aset', label: 'Laporan Rekap Aset' },
-    ],
-  },
-  {
     id: 'pengaturan', type: 'group', label: 'Pengaturan', mobileLabel: 'Atur', groupLabel: '⚙️ PENGATURAN', icon: '⚙️',
     subgroups: [
       {

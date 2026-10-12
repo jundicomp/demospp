@@ -20,11 +20,11 @@
  */
 export const DEFAULT_SHEETS_CONFIG = {
   master: {
-    url: 'https://script.google.com/macros/s/AKfycbyX53aeXaijLqakdW8jJWFCekkiQ5H4mzJmBBEH6pew5-5fez5lE1iBHmhw8v55CnK4/exec',
+    url: 'https://script.google.com/macros/s/AKfycbx9unf2CFzLySuXEJyPLnUPgNMvAoBYxjtUlMOfumk6L2q_m-gFxAOC5_KmW8WuyJ0xBA/exec',
     secret: '123456',
   },
   keuangan: {
-    url: 'https://script.google.com/macros/s/AKfycbxkQd7gpPCOPA3PKexbCOv1iUji65tI0NNV_lJl8kTDe6N5BToLiQGJsugJVF3y9Rlr-w/exec',
+    url: 'https://script.google.com/macros/s/AKfycbxY1oNxd9ywcl0TZIkJAIy828QyubJnnNW_QsZmMCGzgXDlxr_YgL0WNK_bvnKvLGq2lQ/exec',
     secret: '123456',
   },
 };

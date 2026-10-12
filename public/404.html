@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <title>SPP & Sarpras — MI Ikhlasiyah</title>
   <script>
-    // Trik standar SPA di GitHub Pages, disesuaikan utk repo project (base path /spp/).
-    // Ubah path biasa (mis. /spp/tunggakan) jadi rute hash (/spp/#/tunggakan)
-    // lalu redirect balik ke index.html di dalam base path yang sama.
-    var BASE = '/spp/';
+    // Trik standar SPA di GitHub Pages. Base path diambil otomatis dari nama repo
+    // (mis. /demospp/), lalu path biasa (/demospp/tunggakan) diubah jadi rute hash
+    // (/demospp/#/tunggakan) dan redirect balik ke index.html.
+    var BASE = '/' + location.pathname.split('/')[1] + '/';
     var full = location.pathname + location.search;
     var rest = full.indexOf(BASE) === 0 ? full.slice(BASE.length) : full.replace(/^\/+/, '');
     location.replace(BASE + '#/' + rest);

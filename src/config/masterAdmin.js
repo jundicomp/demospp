@@ -23,3 +23,16 @@ export const MASTER_ADMIN = {
   role: 'Admin',
   email: 'dev@jundicomp.local',
 };
+
+/**
+ * AKUN DEMO — untuk pengunjung web demo. Selalu bisa login (tidak disimpan
+ * di Google Sheets), punya akses penuh seperti Admin. Kredensial ini sengaja
+ * dipublikasikan di halaman demo.
+ */
+export const DEMO_USER = {
+  username: 'demo',
+  password: '123456',
+  nama: 'Pengguna Demo',
+  role: 'Admin',
+  email: 'demo@sekolah-demo.sch.id',
+};

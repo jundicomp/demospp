@@ -197,7 +197,7 @@ export default function RombelTab() {
   const [laporanAktif, setLaporanAktif] = useState(null); // { kelas, rombel } | null
   const [printingAll, setPrintingAll] = useState(false);
   const printId = 'print-' + useId().replace(/:/g, '');
-  const namaSekolah = profilSekolah?.nama || 'MI Ikhlasiyah';
+  const namaSekolah = profilSekolah?.nama || 'SPP Sekolah';
 
   // Rombel hanya utk siswa Aktif -- yg Lulus/Pindah/Berhenti ada di tab Riwayat Siswa.
   const siswaAktif = useMemo(() => siswa.filter(s => (s.status || 'Aktif') === 'Aktif'), [siswa]);

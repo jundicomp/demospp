@@ -32,7 +32,7 @@ const SHEET_LIST_KEUANGAN = [
 ];
 
 export default function PengaturanSistem() {
-  const { toast } = useAppData();
+  const { toast, profilSekolah } = useAppData();
   const [backingUp, setBackingUp] = useState(false);
   const [progress, setProgress] = useState('');
 
@@ -59,7 +59,7 @@ export default function PengaturanSistem() {
         }
       }
       const tanggal = todayWIB();
-      XLSX.writeFile(wb, `Backup MI Ikhlasiyah - ${tanggal}.xlsx`);
+      XLSX.writeFile(wb, `Backup ${profilSekolah?.nama || 'SPP Sekolah'} - ${tanggal}.xlsx`);
       toast('Backup berhasil diunduh.');
     } catch (err) {
       toast(err.message, 'error');

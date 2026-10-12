@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import { useAppData } from '../../context/AppContext';
 import pkg from '../../../package.json';
+import { LogoBawaan, namaSekolahAtauDefault } from '../brand/SchoolBrand';
 
 const Arrow = () => (
   <svg className="nav-group-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2"><path d="M9 6l6 6-6 6" /></svg>
@@ -56,13 +57,10 @@ export default function Sidebar() {
         {profilSekolah?.logo ? (
           <img src={profilSekolah.logo} alt="Logo Sekolah" width="38" height="38" style={{ objectFit: 'contain', borderRadius: 8 }} />
         ) : (
-          <svg width="38" height="38" viewBox="0 0 48 48">
-            <circle cx="24" cy="24" r="21" fill="#1C7A3C" />
-            <text x="24" y="25" textAnchor="middle" dominantBaseline="central" fontFamily="Arial, sans-serif" fontSize="16" fontWeight="800" fill="#F0B429">MI</text>
-          </svg>
+          <LogoBawaan nama={profilSekolah?.nama} size={38} />
         )}
         <div>
-          <div className="brand-name">{profilSekolah?.nama || 'MI Ikhlasiyah'}</div>
+          <div className="brand-name">{namaSekolahAtauDefault(profilSekolah)}</div>
           <div className="brand-sub">SPP dan Sarpras</div>
         </div>
       </div>

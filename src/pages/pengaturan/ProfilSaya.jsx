@@ -21,7 +21,7 @@ function GantiPasswordCard() {
       <div className="card">
         <div className="card-head"><div><h3>Ganti Password</h3></div></div>
         <div className="card-body" style={{ fontSize: 12.5, color: 'var(--muted)' }}>
-          Akun Admin Induk tersimpan di kode sumber aplikasi (bukan di Google Sheets), jadi tidak bisa diganti dari sini.
+          {currentUser.isDemo ? 'Akun demo' : 'Akun Admin Induk'} tersimpan di kode sumber aplikasi (bukan di Google Sheets), jadi tidak bisa diganti dari sini.
           Untuk menggantinya, ubah nilai di file <code>src/config/masterAdmin.js</code> lalu build ulang.
         </div>
       </div>

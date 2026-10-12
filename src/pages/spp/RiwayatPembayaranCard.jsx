@@ -53,7 +53,7 @@ export default function RiwayatPembayaranCard() {
   const [sampaiTanggal, setSampaiTanggal] = useState('');
   const [printingAll, setPrintingAll] = useState(false);
   const printId = 'print-' + useId().replace(/:/g, '');
-  const namaSekolah = profilSekolah?.nama || 'MI Ikhlasiyah';
+  const namaSekolah = profilSekolah?.nama || 'SPP Sekolah';
   const akunOptions = useMemo(() => akunAktivaOptions(akun), [akun]);
   const pembayaranEditFields = useMemo(() => buildPembayaranEditFields(akunOptions), [akunOptions]);
 

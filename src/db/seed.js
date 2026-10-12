@@ -59,20 +59,20 @@ kelasList.forEach((kls, kIdx) => {
 
 // ---- Users (akun login) ----
 export const usersSeed = [
-  { id: 'U01', nama: 'Ahmad Fauzi Rahman', role: 'Kepala Sekolah', username: 'kepsek', password: 'kepsek123', email: 'kepsek@miikhlasiyah.sch.id' },
-  { id: 'U02', nama: 'Yusuf Hidayat', role: 'Bendahara / TU', username: 'bendahara', password: 'bendahara123', email: 'bendahara@miikhlasiyah.sch.id' },
-  { id: 'U03', nama: 'Rina Marlina', role: 'Staf TU', username: 'staftu', password: 'staftu123', email: 'staftu@miikhlasiyah.sch.id' },
-  { id: 'U04', nama: 'Admin Sistem', role: 'Admin', username: 'admin', password: 'admin123', email: 'admin@miikhlasiyah.sch.id' },
+  { id: 'U01', nama: 'Ahmad Fauzi Rahman', role: 'Kepala Sekolah', username: 'kepsek', password: 'kepsek123', email: 'kepsek@sekolah-demo.sch.id' },
+  { id: 'U02', nama: 'Yusuf Hidayat', role: 'Bendahara / TU', username: 'bendahara', password: 'bendahara123', email: 'bendahara@sekolah-demo.sch.id' },
+  { id: 'U03', nama: 'Rina Marlina', role: 'Staf TU', username: 'staftu', password: 'staftu123', email: 'staftu@sekolah-demo.sch.id' },
+  { id: 'U04', nama: 'Admin Sistem', role: 'Admin', username: 'admin', password: 'admin123', email: 'admin@sekolah-demo.sch.id' },
 ];
 
 // ---- Profil Sekolah ----
 export const profilSekolahSeed = {
-  nama: 'MI Ikhlasiyah',
+  nama: 'SPP Sekolah',
   npsn: '60123456',
   alamat: 'Jl. Pendidikan No. 45, Palembang, Sumatera Selatan',
   kepalaSekolah: 'Ahmad Fauzi Rahman',
   telepon: '0711-123456',
-  email: 'info@miikhlasiyah.sch.id',
+  email: 'info@sekolah-demo.sch.id',
   logo: null,
 };
 

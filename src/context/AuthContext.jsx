@@ -1,7 +1,7 @@
 import { createContext, useContext, useState, useCallback } from 'react';
 import { useAppData } from './AppContext';
 import { isConfigured, fetchUsersFromSheet, updateUserInSheet } from '../services/googleSheets';
-import { MASTER_ADMIN } from '../config/masterAdmin';
+import { MASTER_ADMIN, DEMO_USER } from '../config/masterAdmin';
 
 const AuthContext = createContext(null);
 const SESSION_KEY = 'currentUser_v1';
@@ -64,6 +64,13 @@ export function AuthProvider({ children }) {
     if (uname === MASTER_ADMIN.username && pass === MASTER_ADMIN.password) {
       setLoggingIn(false);
       setCurrentUser({ id: 'MASTER-ADMIN', no: null, isMasterAdmin: true, nama: MASTER_ADMIN.nama, role: MASTER_ADMIN.role, username: MASTER_ADMIN.username, email: MASTER_ADMIN.email, password: MASTER_ADMIN.password });
+      return true;
+    }
+
+    // ---- Akun Demo: selalu bisa login, akses setara Admin ----
+    if (uname === DEMO_USER.username && pass === DEMO_USER.password) {
+      setLoggingIn(false);
+      setCurrentUser({ id: 'DEMO-USER', no: null, isMasterAdmin: true, isDemo: true, nama: DEMO_USER.nama, role: DEMO_USER.role, username: DEMO_USER.username, email: DEMO_USER.email, password: DEMO_USER.password });
       return true;
     }
 

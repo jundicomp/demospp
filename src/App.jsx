@@ -28,6 +28,7 @@ import PeminjamanAset from './pages/sarpras/PeminjamanAset';
 import PemeliharaanAset from './pages/sarpras/PemeliharaanAset';
 import LaporanRekapAset from './pages/sarpras/LaporanRekapAset';
 import ComingSoon from './pages/ComingSoon';
+import { BrandSync } from './components/brand/SchoolBrand';
 
 const PLACEHOLDER_PAGES = [];
 
@@ -76,6 +77,7 @@ export default function App() {
   return (
     <HashRouter>
       <AppProvider>
+        <BrandSync />
         <AuthProvider>
           <Gate />
         </AuthProvider>

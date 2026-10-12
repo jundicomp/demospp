@@ -396,7 +396,7 @@ export default function DataSiswaTab() {
             const kondisiTahunItu = kelasRombelPadaTahun(selected.nisn, ta, riwayatAkademik, { kelasTingkat: selected.kelasTingkat, rombel: selected.rombel });
             return (
               <TahunSection
-                key={ta} namaSekolah={profilSekolah?.nama || 'MI Ikhlasiyah'} namaSiswa={selected.nama}
+                key={ta} namaSekolah={profilSekolah?.nama || 'SPP Sekolah'} namaSiswa={selected.nama}
                 kelasLabel={kondisiTahunItu.kelasTingkat ? `Kelas ${kondisiTahunItu.kelasTingkat}` : '-'}
                 rombelLabel={kondisiTahunItu.rombel || 'Rombel belum ditentukan'}
                 tahunAjaran={ta} items={items} defaultOpen={idx === 0}

@@ -23,7 +23,7 @@ const ICON_DELETE = (
 );
 
 export default function StoredDataTable({ refreshKey }) {
-  const { toast, refreshSiswa } = useAppData();
+  const { toast, refreshSiswa, profilSekolah } = useAppData();
   const { currentUser, canAccess } = useAuth();
   const [rows, setRows] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -112,7 +112,7 @@ export default function StoredDataTable({ refreshKey }) {
         <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
           {canAccess('siswa', 'manual') && <button className="btn btn-sm btn-primary" onClick={() => setShowTambah(true)}>+ Tambah Siswa</button>}
           {canAccess('siswa', 'excel') && <button className="btn btn-sm" onClick={() => setShowUpload(true)}>📊 Upload Excel</button>}
-          <button className="btn btn-sm" onClick={() => exportToExcel(exportHeaders, rows, 'Data Siswa', 'Data Siswa - MI Ikhlasiyah')} disabled={rows.length === 0}>📊 Excel</button>
+          <button className="btn btn-sm" onClick={() => exportToExcel(exportHeaders, rows, 'Data Siswa', `Data Siswa - ${profilSekolah?.nama || 'SPP Sekolah'}`)} disabled={rows.length === 0}>📊 Excel</button>
           <button className="btn btn-sm" onClick={handlePrint} disabled={rows.length === 0}>🖨️ PDF</button>
           <button className="btn btn-sm" onClick={load} disabled={loading}>{loading ? 'Memuat...' : '↻ Muat Ulang'}</button>
         </div>

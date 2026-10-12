@@ -63,7 +63,7 @@ export default function LaporanRekapAset() {
   }, [pemeliharaanRes.data]);
 
   const dataSiap = asetLoaded && peminjamanRes.loaded && pemeliharaanRes.loaded;
-  const namaSekolah = profilSekolah?.nama || 'MI Ikhlasiyah';
+  const namaSekolah = profilSekolah?.nama || 'SPP Sekolah';
 
   function handleExportPdf() {
     printElementById(printId);

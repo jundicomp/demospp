@@ -2,6 +2,7 @@ import { useId, useRef } from 'react';
 import Modal from '../../components/common/Modal';
 import { useAppData } from '../../context/AppContext';
 import { printElementById } from '../../utils/exportTable';
+import { LogoBawaan, namaSekolahAtauDefault } from '../../components/brand/SchoolBrand';
 import { shareCardAsImage } from '../../utils/shareCardImage';
 
 function formatRupiah(n) {
@@ -26,13 +27,10 @@ export default function KwitansiModal({ pembayaran, onClose }) {
           {profilSekolah?.logo ? (
             <img src={profilSekolah.logo} alt="Logo Sekolah" style={{ width: 46, height: 46, objectFit: 'contain', flexShrink: 0 }} />
           ) : (
-            <svg width="46" height="46" viewBox="0 0 48 48" style={{ flexShrink: 0 }}>
-              <circle cx="24" cy="24" r="21" fill="#1C7A3C" />
-              <text x="24" y="25" textAnchor="middle" dominantBaseline="central" fontFamily="Arial, sans-serif" fontSize="16" fontWeight="800" fill="#F0B429">MI</text>
-            </svg>
+            <LogoBawaan nama={profilSekolah?.nama} size={46} />
           )}
           <div style={{ textAlign: 'center', flex: 1 }}>
-            <div style={{ fontWeight: 800, fontSize: 17, color: 'var(--green-dark)' }}>{profilSekolah?.nama || 'Nama Sekolah'}</div>
+            <div style={{ fontWeight: 800, fontSize: 17, color: 'var(--green-dark)' }}>{namaSekolahAtauDefault(profilSekolah)}</div>
             <div style={{ fontSize: 11.5, color: 'var(--muted)' }}>{profilSekolah?.alamat || '-'}</div>
           </div>
         </div>

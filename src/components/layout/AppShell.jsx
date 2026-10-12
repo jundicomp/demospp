@@ -4,6 +4,7 @@ import TabletRail from './TabletRail';
 import MobileNav from './MobileNav';
 import ToastContainer from '../common/ToastContainer';
 import UserAktifPanel from './UserAktifPanel';
+import OnboardingNote from '../brand/OnboardingNote';
 
 // Sidebar (desktop), TabletRail (tablet, ~641-1024px), dan MobileNav (hp,
 // <=640px) SEMUA di-mount bersamaan -- CSS (@media di theme.css) yang
@@ -20,6 +21,7 @@ export default function AppShell() {
       <MobileNav />
       <ToastContainer />
       <UserAktifPanel />
+      <OnboardingNote />
     </div>
   );
 }

@@ -4,7 +4,7 @@ import TabletRail from './TabletRail';
 import MobileNav from './MobileNav';
 import ToastContainer from '../common/ToastContainer';
 import UserAktifPanel from './UserAktifPanel';
-import OnboardingNote from '../brand/OnboardingNote';
+import { TourProvider } from '../brand/AppTour';
 
 // Sidebar (desktop), TabletRail (tablet, ~641-1024px), dan MobileNav (hp,
 // <=640px) SEMUA di-mount bersamaan -- CSS (@media di theme.css) yang
@@ -12,6 +12,7 @@ import OnboardingNote from '../brand/OnboardingNote';
 // ukuran layar lewat JS.
 export default function AppShell() {
   return (
+    <TourProvider>
     <div className="app-shell">
       <Sidebar />
       <TabletRail />
@@ -21,7 +22,7 @@ export default function AppShell() {
       <MobileNav />
       <ToastContainer />
       <UserAktifPanel />
-      <OnboardingNote />
     </div>
+    </TourProvider>
   );
 }

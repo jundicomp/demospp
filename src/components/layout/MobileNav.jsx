@@ -65,6 +65,7 @@ export default function MobileNav() {
           <button
             key={node.id}
             type="button"
+            data-tour={`nav-${node.id}`}
             className={'mobile-navbtn' + (openSheet === node.id ? ' active' : '')}
             onClick={() => {
               if (node.type === 'link') {

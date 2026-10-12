@@ -3,6 +3,7 @@ import { useAuth } from '../../context/AuthContext';
 import { useAppData } from '../../context/AppContext';
 import { initials, avatarColor } from '../../db/helpers';
 import StatusKoneksiHeader from './StatusKoneksiHeader';
+import { TombolBantuan } from '../brand/AppTour';
 
 export default function Topbar({ title, path }) {
   const { currentUser, logout } = useAuth();
@@ -16,10 +17,11 @@ export default function Topbar({ title, path }) {
         <p className="topbar-path">{path}</p>
       </div>
       <div className="topbar-right" style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-        <StatusKoneksiHeader />
-        <div className="topbar-badge">Tahun Ajaran Aktif: {tahunAjaranAktif ? tahunAjaranAktif.label : '-'}</div>
+        <div data-tour="status"><StatusKoneksiHeader /></div>
+        <TombolBantuan />
+        <div className="topbar-badge" data-tour="tahun">Tahun Ajaran Aktif: {tahunAjaranAktif ? tahunAjaranAktif.label : '-'}</div>
         {currentUser && (
-          <div className="topbar-user">
+          <div className="topbar-user" data-tour="user">
             <div
               onClick={() => navigate('/profil-saya')}
               title="Lihat Profil Saya"

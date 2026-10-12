@@ -52,7 +52,7 @@ function FullMenu({ nodes, canAccess }) {
 
 function RailIcon({ node, active, onClick }) {
   return (
-    <button type="button" className={'rail-icon-btn' + (active ? ' active' : '')} onClick={onClick} title={node.label}>
+    <button type="button" className={'rail-icon-btn' + (active ? ' active' : '')} onClick={onClick} title={node.label} data-tour={`nav-${node.id}`}>
       <span className="rail-icon-emoji">{node.icon}</span>
       <span className="rail-icon-label">{node.label}</span>
     </button>

@@ -26,7 +26,7 @@ function formatWaktuBuild(isoString) {
 
 function NavGroup({ id, label, children, sub, open, onToggle }) {
   return (
-    <div className={`nav-group ${sub ? 'nav-subgroup' : ''} ${open ? 'open' : ''}`}>
+    <div className={`nav-group ${sub ? 'nav-subgroup' : ''} ${open ? 'open' : ''}`} data-tour={sub ? undefined : `nav-${id}`}>
       <div className="nav-group-header" onClick={() => onToggle(id)}>
         <span>{label}</span>
         <Arrow />
@@ -36,10 +36,10 @@ function NavGroup({ id, label, children, sub, open, onToggle }) {
   );
 }
 
-function Item({ to, children, canAccess }) {
+function Item({ to, children, canAccess, tour }) {
   if (canAccess === false) return null;
   return (
-    <NavLink to={to} className={({ isActive }) => 'nav-item' + (isActive ? ' active' : '')}>
+    <NavLink to={to} data-tour={tour} className={({ isActive }) => 'nav-item' + (isActive ? ' active' : '')}>
       {children}
     </NavLink>
   );
@@ -53,7 +53,7 @@ export default function Sidebar() {
 
   return (
     <aside className="sidebar">
-      <div className="sidebar-head">
+      <div className="sidebar-head" data-tour="brand">
         {profilSekolah?.logo ? (
           <img src={profilSekolah.logo} alt="Logo Sekolah" width="38" height="38" style={{ objectFit: 'contain', borderRadius: 8 }} />
         ) : (
@@ -66,7 +66,7 @@ export default function Sidebar() {
       </div>
 
       <nav className="sidebar-nav">
-        <Item to="/dashboard" canAccess={canAccess('dashboard')}>Dashboard</Item>
+        <Item to="/dashboard" tour="nav-dashboard" canAccess={canAccess('dashboard')}>Dashboard</Item>
 
         <NavGroup id="spp" label="🎓 SPP" open={openGroups.spp} onToggle={toggle}>
           <Item to="/dashboard-spp" canAccess={canAccess('dashboard-spp')}>Dashboard SPP</Item>
